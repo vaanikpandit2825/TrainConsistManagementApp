@@ -1,0 +1,23 @@
+public class UC20 {
+
+    public static void main(String[] args) {
+
+        String[] arr = {}; // empty
+
+        if (arr.length == 0) {
+            throw new IllegalStateException("No bogies available");
+        }
+
+        String key = "BG101";
+        boolean found = false;
+
+        for (String s : arr) {
+            if (s.equals(key)) {
+                found = true;
+                break;
+            }
+        }
+
+        System.out.println(found ? "Found" : "Not Found");
+    }
+}
