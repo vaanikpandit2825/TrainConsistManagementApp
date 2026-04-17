@@ -1,0 +1,13 @@
+import java.util.Arrays;
+
+public class UC17 {
+
+    public static void main(String[] args) {
+
+        String[] arr = {"Sleeper", "AC Chair", "First Class", "General"};
+
+        Arrays.sort(arr);
+
+        System.out.println(Arrays.toString(arr));
+    }
+}
