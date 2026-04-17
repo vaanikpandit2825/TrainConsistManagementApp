@@ -1,0 +1,30 @@
+public class UC14:handle Invalid Bogie Capacity {
+
+    static class InvalidCapacityException extends Exception {
+        public InvalidCapacityException(String msg) {
+            super(msg);
+        }
+    }
+
+    static class PassengerBogie {
+        String type;
+        int capacity;
+
+        PassengerBogie(String type, int capacity) throws InvalidCapacityException {
+            if (capacity <= 0) {
+                throw new InvalidCapacityException("Capacity must be > 0");
+            }
+            this.type = type;
+            this.capacity = capacity;
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            PassengerBogie b1 = new PassengerBogie("Sleeper", 72);
+            PassengerBogie b2 = new PassengerBogie("AC", -10);
+        } catch (InvalidCapacityException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
