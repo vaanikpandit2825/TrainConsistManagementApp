@@ -1,0 +1,36 @@
+public class UC15 {
+
+    static class CargoSafetyException extends RuntimeException {
+        public CargoSafetyException(String msg) {
+            super(msg);
+        }
+    }
+
+    static class GoodsBogie {
+        String shape;
+        String cargo;
+
+        GoodsBogie(String shape) {
+            this.shape = shape;
+        }
+
+        void assignCargo(String cargo) {
+            try {
+                if (shape.equals("Rectangular") && cargo.equals("Petroleum")) {
+                    throw new CargoSafetyException("Unsafe cargo!");
+                }
+                this.cargo = cargo;
+                System.out.println("Cargo assigned");
+            } catch (CargoSafetyException e) {
+                System.out.println(e.getMessage());
+            } finally {
+                System.out.println("Done (logged)");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        GoodsBogie g = new GoodsBogie("Rectangular");
+        g.assignCargo("Petroleum");
+    }
+}
