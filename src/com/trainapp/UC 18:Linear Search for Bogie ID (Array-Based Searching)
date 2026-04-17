@@ -1,0 +1,19 @@
+public class UC18 {
+
+    public static void main(String[] args) {
+
+        String[] arr = {"BG101", "BG205", "BG309", "BG412", "BG550"};
+        String key = "BG309";
+
+        boolean found = false;
+
+        for (String s : arr) {
+            if (s.equals(key)) {
+                found = true;
+                break;
+            }
+        }
+
+        System.out.println(found ? "Found" : "Not Found");
+    }
+}
